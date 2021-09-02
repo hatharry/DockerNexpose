@@ -22,7 +22,7 @@ RUN cd /chef && /opt/chef/embedded/bin/berks vendor /chef/cookbooks
 RUN chmod 777 /var/run/screen
 
 #INSTALL nexpose cookbook
-RUN chef-solo -c /chef/file_paths.rb -j /chef/run_list.json
+RUN chef-solo --chef-license=accept -c /chef/file_paths.rb -j /chef/run_list.json
 
 #EXPOSE nexpose web console
 EXPOSE 3780
